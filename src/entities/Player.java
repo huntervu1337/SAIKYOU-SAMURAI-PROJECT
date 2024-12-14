@@ -734,14 +734,15 @@ public class Player extends Entity {
 
 	private void checkSkill() {
 		if((playerAction==SKILL)&&flame) {
-			if((Math.abs(hitbox.x-enemy.hitbox.x-enemy.hitbox.width)<108*Game.SCALE||Math.abs(hitbox.x+hitbox.width-enemy.hitbox.x)<108*Game.SCALE)&&(Math.abs(hitbox.y+hitbox.height-enemy.hitbox.y)<108*Game.SCALE||Math.abs(hitbox.y-enemy.hitbox.height-enemy.hitbox.y)<108*Game.SCALE))
+			if((Math.abs(hitbox.x-enemy.hitbox.x-enemy.hitbox.width)<108*Game.SCALE||Math.abs(hitbox.x+hitbox.width-enemy.hitbox.x)<108*Game.SCALE)&&(Math.abs(hitbox.y+hitbox.height-enemy.hitbox.y)<108*Game.SCALE||Math.abs(hitbox.y-enemy.hitbox.height-enemy.hitbox.y)<108*Game.SCALE)) {
 				if(!enemy.hurt&&!enemy.healing&&(aniIndex>6)) {
 					enemy.changeHealth(-5);
 					enemy.hurt = true;
 					if(enemy.currentHealth<=0)
 						audioPlayer.gameOver();
 					specialAttackEffect = true;
-				} else
+				} 
+			}else
 					specialAttackEffect = false;
 		}
 		if(flame||speedUp)
