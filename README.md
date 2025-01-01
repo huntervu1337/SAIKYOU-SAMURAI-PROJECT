@@ -1,1 +1,1 @@
-## Simple 2D local 2 player versus game
+## Simple 2D 2 player local versus game
